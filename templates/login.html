@@ -1,18 +1,99 @@
+{% load static %}
+{% static "images" as BaseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
+<title>Ghumo</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Ghumo template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+
 </head>
 <body>
 
-    <form type="login" method="post">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="password" name="password" placeholder="Password"><br>
-        <input type="Submit">
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <div class="container">
+        <div class="menu_social">
+            <div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
+            <ul class="d-flex flex-row align-items-start justify-content-start">
+                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </div>
 
-    </form>
+    <!-- Home -->
+
+    <div class="home">
+
+        <!-- Home Slider -->
+        <div class="home_slider_container">
+            <div class="owl-carousel owl-theme home_slider">
+
+                <!-- Slide -->
+                <div class="owl-item">
+                    <div class="background_image" style="background-image:url({%  static 'images/home_slider.jpg' %})"></div>
+                    <div class="home_slider_content_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="home_slider_content">
+                                        <div class="home_title"><h2>Let us take you away</h2></div>
+                                        <div class="box">
+                                            <h2 style= "color : #F6F0F7";>Log In</h2>
+                                            <div class ="user">
+                                                <i class="fas fa-user"></i>
+                                
+                                
+                                
+                                    <form type="login" method="post">
+                                        {% csrf_token %}
+                                        <input
+                                                type = "text"
+                                                name = "username"
+                                                id="username"
+                                                autocomplete="off"
+                                                placeholder="username"/><br><br>
+                                                <input
+                                                type="password"
+                                                name="password"
+                                                id="passsword"
+                                                autocomplete="off"
+                                                placeholder="password"
+                                                />
+                                            <br><br>
+                                            <div class="login-btn">
+                                                <button class="btn">submit<a href="login"></a></button><br><br>
+                                                <p class="signup" style = "color : #F6F0F7";>First time here? <a href="register"  style = "color: #F6F0F7";>Register</a></p>
+                                                
+                                            </div>
+                                       
+                                
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        
+          
+      
+
+  
 
     <div>
         {% for message in messages %}
@@ -20,6 +101,59 @@
         {% endfor %}
     </div>
 
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
 
 </body>
 </html>
+
+
+<!--<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width , initial-scale=1.0" />
+        <link rel="stylesheet" href= "styles1/style1.css">
+    </head>
+
+    <body>
+        <script
+        src="https://use.fontawesome.com/releases/v5.15.4/js/all.js">
+      </script>
+        <div class="container">
+            <div class="box">
+                <h1>Log In</h1>
+                <div class ="user">
+                    <i class="fas fa-user"></i>
+                    <input
+                    type = "text"
+                    name = "username"
+                    id="username"
+                    autocomplete="off"
+                    placeholder="username"/>
+                    <i class="fas fa-unlock-alt"></i>
+                    <input
+                    type="password"
+                    name="password"
+                    id="passsword"
+                    autocomplete="off"
+                    placeholder="password"
+                    />
+
+                </div>
+                <p class="reset-password">Forgot Password</p>
+                <div class="login-btn">
+                    <button class="btn">submit</button>
+                    <p class="signup">First time here? <span>Sign up</span></p>
+                </div>
+            </div>
+
+        </div>
+
+</html>--!>
